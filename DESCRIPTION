@@ -1,13 +1,16 @@
 Package: gdphelperR
-Title: What the Package Does (One Line, Title Case)
+Title: Summarize GDP Data and Make Plots
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Aldo", "Barros", , "aldosaltao@gmail.com", role = c("aut", "cre"))
+    person("Gabe", "Fairbrother", , "gfairbrother@gmail.com", role = c("aut", "cre"))
+    person("Wanying", "Ye", , "wanying.ye2020@gmail.com", role = c("aut", "cre"))
+    person("Ramiro", "Mejia", , "ramiromejiap@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+URL: https://github.com/GloriaWYY/gdphelperR
+BugReports: https://github.com/GloriaWYY/gdphelperR/issues
