@@ -11,14 +11,15 @@ GDP-related csv datasets from the [Canadian Government Open Data
 Portal](https://open.canada.ca/en/open-data) and download, clean load,
 summarize and visualize the data contained within.
 
+- `gdpimporterr`: Downloads the zipped data, extracts, renames the appropriate csv, and returns a dataframe along with the title from the meta data.
+- `gdpcleanerr`: Loads the data, removes spurious columns, renames used columns, scrubs and data issues. Returns a basic data frame and some category flags.
+- `gdpdescriberr` : Evaluates the data category and generates summary statistics by year, region, industry, etc.
+- `gdpplotterr`: Generates a set of visualizations of the data set according to the user's choices.
+
+This package is built upon a bunch of popular packages in R ecosystem, including `ggplot` and `tidyverse.` What makes this package unique is that it incorporates the common functionalities and streamlines the workflow from downloading the data to performing simple EDA, specifically for the GDP-related data from the Canadian Government Open Data Portal.
+
+
 ## Installation
-
-You can install the released version of gdphelperR from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("gdphelperR")
-```
 
 And the development version from [GitHub](https://github.com/) with:
 
