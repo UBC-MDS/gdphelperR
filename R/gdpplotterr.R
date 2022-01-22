@@ -10,8 +10,8 @@
 #' df <- read_csv("36100408.csv")
 #' aggregation <- "canada"
 #' cleaned_df <- gdpcleaner(df)
-#' gdpplotter(cleaned_df, aggregation)
-gdpplotter <- function(cleaned_Dataframe, aggregation){
+#' gdpplotterr(cleaned_df, aggregation)
+gdpplotterr <- function(cleaned_Dataframe, aggregation){
 
 
 }
