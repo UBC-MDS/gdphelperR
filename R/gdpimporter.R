@@ -16,6 +16,6 @@
 #' @export
 #'
 #' @examples
-#' gdpimporter("https://www150.statcan.gc.ca/n1/tbl/csv/36100400-eng.zip")
-gdpimporter <- function(url, filename = NULL, filetype = 'csv') {
+#' gdpimporterr("https://www150.statcan.gc.ca/n1/tbl/csv/36100400-eng.zip")
+gdpimporterr <- function(url, filename = NULL, filetype = 'csv') {
 }
