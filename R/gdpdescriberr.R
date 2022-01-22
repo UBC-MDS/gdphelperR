@@ -22,6 +22,6 @@
 #'
 #' @examples
 #' gdpdescriberr(df, "GDP", "year", stats=c("mean", "median", "sd", "min", "max", "range_"), dec=2)
-gdpdescriberrr  <- function(data.frame, x, y, stats=c("mean", "sd", "median"), dec=2){
+gdpdescriberr  <- function(data.frame, x, y, stats=c("mean", "sd", "median"), dec=2){
 
 }
