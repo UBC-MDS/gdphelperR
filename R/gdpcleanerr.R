@@ -11,38 +11,42 @@
 #'
 #' @examples
 #' df <- gdpcleanerr(data)
-gdpcleanerr <- function(data_frame){
+gdpcleanerr <- function(gdpdata){
 
     #Check that the argument is correct
-    if is.null(data_frame) {
+    if (is.null(gdpdata)) {
         stop("No argument. Please call gdpcleanerr with a dataframe as the only argument")
     }
-    if !is.data_frame(data_frame) {
+    if (!is.data.frame(gdpdata)) {
         stop("Please call gdpcleaner with a dataframe as the only argument")
     }
 
+    #Clear problem names
+    names(gdpdata)<-stringr::str_replace_all(names(gdpdata), c(" " = "_" , "," = "_" ))
+
     #Remove spurious columns and NAs, and rename kept columns
-    cleaned_frame <- gdpdata |> subset(mydata, select = -c(DGUID, UOM_ID, SCALAR_ID, 
-                                                        VECTOR, COORDINATE, STATUS, 
-                                                        SYMBOL, TERMINATED, DECIMALS, 
-                                                        Value, `Seasonal adjustment`)) |>
-                                na.omit() |>
-                                dplyr::rename(Date = REF_DATE , Location = GEO, 
-                                    Scale = SCALAR_FACTOR, Value = VALUE, 
-                                    Unit = UOM) 
+    cleaned_data <- gdpdata |> dplyr::select(-one_of(c("DGUID", "UOM_ID", "SCALAR_ID",
+                                                 "VECTOR", "COORDINATE", "STATUS",
+                                                  "SYMBOL", "TERMINATED", "DECIMALS",
+                                                  "Value", "Seasonal_adjustment"))) |>
+                                stats::na.omit() |>
+                                dplyr::rename(Date = REF_DATE , Location = GEO,
+                                    Scale = SCALAR_FACTOR, Value = VALUE,
+                                    Unit = UOM) |> suppressWarnings()
+
 
     #Check for NAICS and Aggregates columns
-    naics_index = grepl('NAICS', colnames(cleaned_frame))
-    aggs_index = grepl('aggregat', colnames(cleaned_frame))
+    naics_index <- grep('NAICS', colnames(cleaned_data))
+    aggs_index <- grep('aggregat', colnames(cleaned_data))
 
     #Rename if found
-    if naics_index is not NULL {
-        rename(cleaned_frame, NAICS_Class = naics_index)
+    if (length(naics_index) > 0) {
+        cleaned_data <- dplyr::rename(cleaned_data, NAICS_Class = naics_index)
     }
 
-    if aggs_index is not NULL {
-        rename(cleaned_frame, Special_Industry = aggs_index)
+    if (length(aggs_index) > 0) {
+      cleaned_data <- dplyr::rename(cleaned_data, Special_Industry = aggs_index)
     }
 #Return clean dataframe
-cleaned_frame                             
+cleaned_data
 }
