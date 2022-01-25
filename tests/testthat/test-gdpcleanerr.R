@@ -1,3 +1,4 @@
+
 test_that("gdpcleanerr throws an error if not called with any argument",
            expect_error(gdpcleanerr()))
 

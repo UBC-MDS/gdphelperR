@@ -29,7 +29,7 @@ gdpimporterr <- function(url, filename = NULL, filetype = 'csv') {
     stop("'url' should be a valid url of a zipfile that ends with '.zip'")
   }
 
-  utils::download.file(url, "zipfolder_oc.zip")
+  utils::download.file(url, "zipfolder_oc.zip", quiet = TRUE)
   info = utils::unzip("zipfolder_oc.zip", list=TRUE)
   utils::unzip("zipfolder_oc.zip")
 
@@ -51,12 +51,12 @@ gdpimporterr <- function(url, filename = NULL, filetype = 'csv') {
       }
     }
     # Clean up the unuseful files
-    file.remove("zipfolder_oc.zip")
-    for (file in info$Name) {
-      if (".csv" != substr(file, nchar(file) - 3, nchar(file))) {
-        file.remove(file)
-      }
-    }
+    # file.remove("zipfolder_oc.zip")
+    # for (file in info$Name) {
+    #   if (".csv" != substr(file, nchar(file) - 3, nchar(file))) {
+    #     file.remove(file)
+    #   }
+    # }
 
   } else {
     for (file in info$Name) {
@@ -73,7 +73,7 @@ gdpimporterr <- function(url, filename = NULL, filetype = 'csv') {
   metadata = readr::read_csv(metadata_path) |> suppressMessages() |> suppressWarnings()
   data = readr::read_csv(data_path) |> suppressMessages()
   # Clean up the metadata
-  file.remove(metadata_path)
+  # file.remove(metadata_path)
   # return a list
   list(data, metadata$`Cube Title`[1])
 }
