@@ -50,13 +50,13 @@ gdpimporterr <- function(url, filename = NULL, filetype = 'csv') {
         }
       }
     }
-    # Clean up the unuseful files
-    # file.remove("zipfolder_oc.zip")
-    # for (file in info$Name) {
-    #   if (".csv" != substr(file, nchar(file) - 3, nchar(file))) {
-    #     file.remove(file)
-    #   }
-    # }
+    #Clean up the unuseful files
+    file.remove("zipfolder_oc.zip")
+    for (file in info$Name) {
+      if (".csv" != substr(file, nchar(file) - 3, nchar(file))) {
+        file.remove(file)
+      }
+    }
 
   } else {
     for (file in info$Name) {
