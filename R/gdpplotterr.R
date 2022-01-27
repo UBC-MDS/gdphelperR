@@ -65,33 +65,32 @@ gdpplotterr <- function(cleaned_Dataframe){
   if ( "Canada" %in% provinces && total_year > 1) {
     #print("barchart for Canada")
     df_filtered_2 <- dplyr::filter(df_filtered, Location == "Canada")
-    plot_location <- ggplot2::ggplot(df_filtered_2, aes(x = Date, y = Value, color=Location)) +
+    plot_location <- ggplot2::ggplot(df_filtered_2, ggplot2::aes(x = Date, y = Value, color=Location)) +
       geom_bar(stat = 'summary', fun = sum)+
       facet_wrap(~Location, ncol = 5)
     plot_location
 
   } else if ( "Canada" %in% provinces && total_year == 1) {
     #print("bar chart here!!")
-    plot_location <- ggplot2::ggplot(df_filtered, aes(x = Date, y = Value, color=Location)) +
+    plot_location <- ggplot2::ggplot(df_filtered, ggplot2::aes(x = Date, y = Value, color=Location)) +
       geom_bar(stat = 'summary', fun = sum)+
       facet_wrap(~Location, ncol = 5)
     plot_location
 
   } else if ( total_year > 1) {
     #print("chart with multlines goes here")
-    plot_location <- ggplot2::ggplot(df_filtered, aes(x = Date, y = Value, color = Location)) +
+    plot_location <- ggplot2::ggplot(df_filtered, ggplot2::aes(x = Date, y = Value, color = Location)) +
       geom_line(stat = 'summary', fun = sum)
     plot_location
 
   } else {
     #print("bar chart for provincies goes here")
-    plot_location <- ggplot2::ggplot(df_filtered, aes(x = Date, y = Value, color=Location)) +
+    plot_location <- ggplot2::ggplot(df_filtered, ggplot2::aes(x = Date, y = Value, color=Location)) +
       geom_bar(stat = 'summary', fun = sum)+
       facet_wrap(~Location, ncol = 5)
     plot_location
 
   }
-
 
 
 }
