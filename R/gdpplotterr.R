@@ -1,15 +1,21 @@
 #' gpdplotterr
 #' Author: Aldo Saltao Barros
 #' Plot a line chart of periods and the selected feature.
-#' @param cleaned_Dataframe This is the name of the dataset that you want to draw a chart. It is an output from the function gdpcleaner
-#' @param aggregation There are two types of aggregation, "canada" and "province". The first one will give the GDP by total Canada. The first one will give the GDP by province.
+#' @param cleaned_Dataframe This is the name of the dataset that you want to draw a chart. It is an output from the function gdpcleanerr
 #'
 #' @return line chart of GDP by the Region VS periods.
 #' @export
 #'
 #' @examples
-#' df <- readr::read_csv("gdphelperR/36100400.csv")
-#' cleaned_df <- gdpcleaner(df)
+#' data <- tibble::tribble(~REF_DATE,~GEO,~DGUID,
+#' ~`North.American.Industry.Classification.System.(NAICS)`,
+#' ~UOM, ~UOM_ID,~SCALAR_FACTOR,~SCALAR_ID,~VECTOR, ~COORDINATE,
+#' ~VALUE,~STATUS,~SYMBOL,~TERMINATED,~DECIMALS,1997L,"Canada",
+#' "2016A000011124","Total industries", "Dollars",81L,"millions",
+#' 6L, "v41894235",1.477, 816756.1, NA,NA, NA,1L,1997L,"Canada",
+#' "2016A000011124", "Crop and animal production",
+#' "Dollars",81L,"millions",6L,"v41700857", 1.1,12755.9,NA,NA, NA,1L)
+#' cleaned_df <- gdpcleanerr(data)
 #' gdpplotterr(cleaned_df)
 gdpplotterr <- function(cleaned_Dataframe){
 

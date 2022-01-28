@@ -3,30 +3,24 @@
 #'from any data set from the Open Government Canada Portal that indicates it is a
 #'"GDP at Basic Prices" data set (see Data_Sources.csv for examples).
 #'
-#' @param data.frame A data frame generated from the Open Government Canada Portal, preferably imported by gdpimporter
+#' @param gdpdata A data frame generated from the Open Government Canada Portal,
+#' preferably imported by gdpimporterr
 #'
 #' @return data.frame A cleaned and simplified data frame
+#' @importFrom tidyselect any_of
 #' @export
 #'
 #' @examples
-#' df <- gdpcleanerr(data)
-gdpcleanerr <- function(data.frame){
+#' data <- tibble::tribble(~REF_DATE,~GEO,~DGUID,
+#' ~`North.American.Industry.Classification.System.(NAICS)`,
+#' ~UOM, ~UOM_ID,~SCALAR_FACTOR,~SCALAR_ID,~VECTOR, ~COORDINATE,
+#' ~VALUE,~STATUS,~SYMBOL,~TERMINATED,~DECIMALS,1997L,"Canada",
+#' "2016A000011124","Total industries", "Dollars",81L,"millions",
+#' 6L, "v41894235",1.477, 816756.1, NA,NA, NA,1L,1997L,"Canada",
+#' "2016A000011124", "Crop and animal production",
+#' "Dollars",81L,"millions",6L,"v41700857", 1.1,12755.9,NA,NA, NA,1L)
+#' df1 <- gdpcleanerr(data)
 
-
-}
-#' GDP Cleaner
-#' Author: Gabe Fairbrother
-#'This function will strip spurious columns, and Null valued rows, and rename retained columns
-#'from any data set from the Open Government Canada Portal that indicates it is a
-#'"GDP at Basic Prices" data set (see Data_Sources.csv for examples).
-#'
-#' @param data.frame A data frame generated from the Open Government Canada Portal, preferably imported by gdpimporter
-#'
-#' @return data.frame A cleaned and simplified data frame
-#' @export
-#'
-#' @examples
-#' df <- gdpcleanerr(data)
 gdpcleanerr <- function(gdpdata){
 
     #Check that the argument is correct
@@ -41,7 +35,7 @@ gdpcleanerr <- function(gdpdata){
     names(gdpdata)<-stringr::str_replace_all(names(gdpdata), c(" " = "_" , "," = "_" ))
 
     #Remove spurious columns and NAs, and rename kept columns
-    cleaned_data <- gdpdata |> dplyr::select(-one_of(c("DGUID", "UOM_ID", "SCALAR_ID",
+    cleaned_data <- gdpdata |> dplyr::select(-any_of(c("DGUID", "UOM_ID", "SCALAR_ID",
                                                  "VECTOR", "COORDINATE", "STATUS",
                                                   "SYMBOL", "TERMINATED", "DECIMALS",
                                                   "Value", "Seasonal_adjustment"))) |>
