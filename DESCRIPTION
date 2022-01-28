@@ -23,4 +23,7 @@ Imports:
     stringr,
     ggplot2,
     vdiffr,
-    testthat
+    testthat,
+    tibble,
+    rlang,
+    tidyselect

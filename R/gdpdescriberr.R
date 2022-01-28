@@ -18,11 +18,19 @@
 #' @param dec number of decimal places to return in the table
 #'
 #' @return data.frame
+#' @importFrom rlang :=
 #' @export
 #'
 #' @examples
-#' df1 <- tibble::tribble(~REF_DATE,~GEO,~DGUID, ~`North.American.Industry.Classification.System.(NAICS)`,      ~UOM, ~UOM_ID, ~SCALAR_FACTOR, ~SCALAR_ID,~VECTOR, ~COORDINATE,~VALUE,~STATUS,~SYMBOL,~TERMINATED,~DECIMALS,1997L, "Canada", "2016A000011124",                                       "Total industries", "Dollars",     81L,     "millions",         6L, "v41894235",1.477, 816756.1, NA,NA,  NA,1L,1997L,"Canada","2016A000011124", "Crop and animal production", "Dollars",81L,"millions",6L,"v41700857", 1.1,12755.9,NA,NA, NA,1L)
-#' gdpdescriberr(df1, VALUE, GEO, .stats=c("mean", "sd", "median"), dec = 2)
+#' data <- tibble::tribble(~REF_DATE,~GEO,~DGUID,
+#' ~`North.American.Industry.Classification.System.(NAICS)`,
+#' ~UOM, ~UOM_ID,~SCALAR_FACTOR,~SCALAR_ID,~VECTOR, ~COORDINATE,
+#' ~VALUE,~STATUS,~SYMBOL,~TERMINATED,~DECIMALS,1997L,"Canada",
+#' "2016A000011124","Total industries", "Dollars",81L,"millions",
+#' 6L, "v41894235",1.477, 816756.1, NA,NA, NA,1L,1997L,"Canada",
+#' "2016A000011124", "Crop and animal production",
+#' "Dollars",81L,"millions",6L,"v41700857", 1.1,12755.9,NA,NA, NA,1L)
+#' gdpdescriberr(data, VALUE, GEO, .stats=c("mean", "sd", "median"), dec = 2)
 
 
 gdpdescriberr = function(df1, x, y, .stats=c("mean", "sd", "median"), dec = 2){
