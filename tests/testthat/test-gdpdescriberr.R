@@ -1,3 +1,28 @@
+test_that("The object is not a dataframe",
+          {expect_error(gdpdescriberr(c(1,3,4,5), x=Value, y=Location))})
+
+test_that("Error: Variable Y has values in every row",{
+          df2 = utils::read.csv("test_13100347.csv")
+          expect_error(gdpdescriberr(df2, x=VALUE, y=VECTOR))
+          })
+
+test_that("Variable X is not numeric",{
+          df2 = utils::read.csv("test_13100347.csv")
+          expect_error(gdpdescriberr(df2, x=GEO, y=VALUE))
+          })
+
+
+test_that("Variable Y is not categorical", {
+          df2 = utils::read.csv("test_13100347.csv")
+          expect_error(gdpdescriberr(df2, x=VALUE, y=UOM_ID))
+          })
+
+
+test_that("The statistic to calculate is not correct! Please enter a valid one",{
+          df2 = utils::read.csv("test_13100347.csv")
+          expect_error(gdpdescriberr(df2, x=VALUE, y=GEO, .stats = c('mean', 'median', 'sd', "bla")))
+          })
+
 test_that("Valid arguments", {
   df2 = utils::read.csv("test_13100347.csv")
   .stats = c('mean', 'median', 'sd')
