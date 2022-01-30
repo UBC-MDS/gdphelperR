@@ -1,0 +1,52 @@
+---
+title: "Welcome to gdphelperR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gdphelperR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(gdphelperR)
+```
+
+First of all, let's retrieve a GDP-related data set from Open Government Portal using `gdpimporterr`. The first element of the output from `gdpimporterr` is the data frame which can be used for downstream data wrangling and analysis, while the second element is a character vector containing the title information from the MetaData. 
+
+```{r}
+# Use gdpimporterr to download and import data
+raw_data <- gdpimporterr("https://www150.statcan.gc.ca/n1/tbl/csv/36100400-eng.zip")
+knitr::kable(head(raw_data[[1]]))
+raw_data[[2]]
+```
+
+Then, `gdpcleanerr` helps to rename the column names and clean up the useless columns, preparing the data for summary statistics (`gdpdescriberr`) and visualization (`gdpploterr`).
+
+```{r}
+# Use gdpcleanerr to clean raw data
+clean_data <- gdpcleanerr(raw_data[[1]])
+knitr::kable(head(clean_data))
+```
+
+`gdpdesciberr` is used to produce customized statistics summary in a nice and easy format.
+
+```{r}
+# Use gdpdescriberr to produce basic summary statistics
+stats <- gdpdescriberr(clean_data, Value, Location, .stats=c("mean", "sd", "max"), dec = 3)
+knitr::kable(stats)
+```
+
+Finally, `gdpimporterr` gives a line plot for GDP values across provinces. 
+
+```{r plot, fig.width=8, fig.height=8, fig.cap="Figure 1. Line plot for GDP for provinces in Canada"}
+# Use gdpplotterr to produce a plot 
+gdpplotterr(clean_data)
+```
+
