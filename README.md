@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/UBC-MDS/gdphelperR/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/gdphelperR/actions)
+[![codecov](https://codecov.io/gh/UBC-MDS/gdphelperR/branch/main/graph/badge.svg?token=GD7QfWZIw5)](https://codecov.io/gh/UBC-MDS/gdphelperR)
 <!-- badges: end -->
 
 The goal of gdphelperR is to take the url of any of the several dozen
