@@ -2,10 +2,10 @@ Package: gdphelperR
 Title: Summarize GDP Data and Make Plots
 Version: 0.0.0.9000
 Authors@R: 
-    person("Aldo", "Barros", , "aldosaltao@gmail.com", role = c("aut", "cre"))
-    person("Gabe", "Fairbrother", , "gfairbrother@gmail.com", role = c("aut", "cre"))
-    person("Wanying", "Ye", , "wanying.ye2020@gmail.com", role = c("aut", "cre"))
-    person("Ramiro", "Mejia", , "ramiromejiap@gmail.com", role = c("aut", "cre"))
+    c(person("Aldo", "Barros", , "aldosaltao@gmail.com", role = c("aut", "cre")),
+    person("Gabe", "Fairbrother", , "gfairbrother@gmail.com", role = c("aut", "cre")),
+    person("Wanying", "Ye", , "wanying.ye2020@gmail.com", role = c("aut", "cre")),
+    person("Ramiro", "Mejia", , "ramiromejiap@gmail.com", role = c("aut", "cre")))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -27,3 +27,7 @@ Imports:
     tibble,
     rlang,
     tidyselect
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
