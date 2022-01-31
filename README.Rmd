@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # gdphelperR
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/UBC-MDS/gdphelperR/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/gdphelperR/actions)
 <!-- badges: end -->
 
 The goal of gdphelperR is to take the url of any of the several dozen GDP-related csv datasets from the [Canadian Government Open Data Portal](https://open.canada.ca/en/open-data) and download, clean load, summarize and visualize the data contained within.

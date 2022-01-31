@@ -3,9 +3,9 @@ Title: Summarize GDP Data and Make Plots
 Version: 0.0.0.9000
 Authors@R: 
     c(person("Aldo", "Barros", , "aldosaltao@gmail.com", role = c("aut", "cre")),
-    person("Gabe", "Fairbrother", , "gfairbrother@gmail.com", role = c("aut", "cre")),
-    person("Wanying", "Ye", , "wanying.ye2020@gmail.com", role = c("aut", "cre")),
-    person("Ramiro", "Mejia", , "ramiromejiap@gmail.com", role = c("aut", "cre")))
+    person("Gabe", "Fairbrother", , "gfairbrother@gmail.com", role = c("aut")),
+    person("Wanying", "Ye", , "wanying.ye2020@gmail.com", role = c("aut")),
+    person("Ramiro", "Mejia", , "ramiromejiap@gmail.com", role = c("aut")))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -29,5 +29,6 @@ Imports:
     tidyselect
 Suggests: 
     rmarkdown,
-    knitr
+    knitr,
+    covr
 VignetteBuilder: knitr
