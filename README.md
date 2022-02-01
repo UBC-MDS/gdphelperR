@@ -30,18 +30,12 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/gdphelperR")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Usage
 
 ``` r
 library(gdphelperR)
 ## basic example code
 ```
-
-## Usage
-
--   TODO
 
 ## Contributors
 
