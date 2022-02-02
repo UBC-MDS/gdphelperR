@@ -26,10 +26,13 @@ devtools::install_github("UBC-MDS/gdphelperR")
 
 ## Usage
 
+to import our package:
 ``` r
 library(gdphelperR)
-## basic example code
 ```
+For a detailed usage example, please refer to our vignette:
+https://ubc-mds.github.io/gdphelperR/articles/my-vignette.html
+
 
 ## Contributors
 
