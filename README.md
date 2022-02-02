@@ -17,13 +17,7 @@ summarize and visualize the data contained within.
 ## Installation
 
 You can install the released version of gdphelperR from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("gdphelperR")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
