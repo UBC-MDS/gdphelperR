@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2022 gdphelperR authors
+Copyright (c) 2022, Aldo Barros, Gabriel Fairbrother, Ramiro Mejia, Wanying Ye
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
