@@ -79,7 +79,21 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of gdphelperR is to take the url of any of the several dozen GDP-related csv datasets from the <a href="https://open.canada.ca/en/open-data" class="external-link">Canadian Government Open Data Portal</a> and download, clean load, summarize and visualize the data contained within.</p>
+<p>The goal of gdphelperR is to take the url of any of the several dozen GDP-related csv datasets from the Canadian Government Open Data Portal and download, clean load, summarize and visualize the data contained within.</p>
+<ul>
+<li>
+<code>gdpimporterr</code>: Downloads the zipped data, extracts, renames the appropriate csv, and returns a dataframe along with the title from the meta data.<br>
+</li>
+<li>
+<code>gdpcleanerr</code>: Loads the data, removes spurious columns, renames used columns, scrubs and data issues. Returns a basic data frame and some category flags.<br>
+</li>
+<li>
+<code>gdpdescriberr</code> : Evaluates the data category and generates summary statistics by year, region, industry, etc.<br>
+</li>
+<li>
+<code>gdpplotterr</code>: Generates a set of visualizations of the data set according to the user’s choices.</li>
+</ul>
+<p>This package is built upon a bunch of popular packages in R ecosystem, including <code>ggplot</code>, <code>dplyr</code> and other packages in the <code>tidyverse</code>. What makes this package unique is that it incorporates the common functionalities and streamlines the workflow from downloading the data to performing simple EDA, specifically for the GDP-related data from the Canadian Government Open Data Portal.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
